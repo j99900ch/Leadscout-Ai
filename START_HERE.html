@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LeadScout AI - 1-Click Launch & Install</title>
+    <style>
+        :root {
+            --primary: #10B981;
+            --primary-dark: #059669;
+            --surface: #0F172A;
+            --card: #1E293B;
+            --card-inner: #334155;
+            --text: #F8FAFC;
+            --text-dim: #94A3B8;
+            --accent: #38BDF8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--surface);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 16px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 520px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .logo-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+            margin-bottom: 12px;
+        }
+
+        .logo-badge svg {
+            width: 34px;
+            height: 34px;
+            fill: white;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #FFFFFF, #93C5FD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 13.5px;
+            color: var(--text-dim);
+            margin-bottom: 18px;
+        }
+
+        .detected-box {
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 12px;
+            padding: 10px 14px;
+            font-size: 12.5px;
+            color: #38BDF8;
+            font-weight: 600;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 18px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 10px 24px rgba(2, 132, 199, 0.4);
+            margin-bottom: 12px;
+        }
+
+        .btn-blue {
+            background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+            color: white;
+        }
+
+        .btn-green {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            color: white;
+            box-shadow: 0 10px 24px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-secondary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #E2E8F0;
+            font-size: 13.5px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 8px;
+            transition: background 0.15s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .tip-box {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 12px;
+            padding: 12px 14px;
+            font-size: 12px;
+            color: #6EE7B7;
+            text-align: left;
+            margin-top: 14px;
+            line-height: 1.45;
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #94A3B8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 18px 0 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <!-- Header Logo -->
+            <div class="logo-badge">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+                </svg>
+            </div>
+            <h1>LeadScout AI</h1>
+            <p class="subtitle">1-Click Launch & Install for Mobile, PC & Mac</p>
+
+            <!-- Auto-detected platform banner -->
+            <div id="deviceBadge" class="detected-box">
+                🔍 Detecting your device...
+            </div>
+
+            <!-- PRIMARY 1-CLICK ACTION (Direct Web App & Instant Home/Desktop Install) -->
+            <a id="primaryActionBtn" href="https://ais-dev-6nozdjhgfyczw4mk4mo3yo-293782780527.asia-southeast1.run.app" class="btn-main btn-blue" target="_blank">
+                🚀 1-CLICK LAUNCH & INSTALL APP
+            </a>
+
+            <!-- Tip / Quick guide -->
+            <div id="quickTip" class="tip-box">
+                💡 <b>How to install as an App Icon:</b> In your browser, tap/click <b>"Install app"</b> or <b>"Add to Home screen"</b> (or the install icon in the URL bar) to place LeadScout directly onto your desktop/phone!
+            </div>
+
+            <!-- ALL PLATFORMS SECTION -->
+            <div class="section-title">Or Choose Your Platform Directly:</div>
+
+            <a href="https://ais-dev-6nozdjhgfyczw4mk4mo3yo-293782780527.asia-southeast1.run.app" class="btn-secondary" target="_blank">
+                🌐 Live Web App (PC, Mac, iPhone & Android)
+            </a>
+
+            <a href="START_ANDROID.html" class="btn-secondary">
+                📱 Android / Infinix APK Package Installer
+            </a>
+
+            <a href="START_WINDOWS.bat" class="btn-secondary">
+                💻 Windows PC 1-Click Starter (START_WINDOWS.bat)
+            </a>
+
+            <a href="START_MAC.command" class="btn-secondary">
+                🍎 Mac 1-Click Starter (START_MAC.command)
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Auto-detect client device
+        const ua = navigator.userAgent || navigator.vendor || window.opera;
+        const deviceBadge = document.getElementById('deviceBadge');
+        const primaryBtn = document.getElementById('primaryActionBtn');
+        const quickTip = document.getElementById('quickTip');
+
+        if (/android/i.test(ua)) {
+            deviceBadge.innerHTML = '📱 <b>Detected:</b> Android / Infinix Mobile';
+            quickTip.innerHTML = '💡 <b>1-Click Android Install:</b> Tap the button above to launch. In Chrome, tap the <b>3 dots (⋮)</b> ➔ <b>"Add to Home screen" / "Install app"</b>.';
+        } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+            deviceBadge.innerHTML = '🍎 <b>Detected:</b> iPhone / iPad (iOS)';
+            quickTip.innerHTML = '💡 <b>1-Click iPhone Install:</b> In Safari, tap the <b>Share icon (⎋)</b> ➔ <b>"Add to Home Screen"</b>.';
+        } else if (/Macintosh|Mac OS X/i.test(ua)) {
+            deviceBadge.innerHTML = '🍏 <b>Detected:</b> Apple Mac OS';
+            quickTip.innerHTML = '💡 <b>1-Click Mac:</b> Open the web app or double-click <b>START_MAC.command</b> to install into /Applications.';
+        } else if (/Windows/i.test(ua)) {
+            deviceBadge.innerHTML = '💻 <b>Detected:</b> Windows PC';
+            quickTip.innerHTML = '💡 <b>1-Click Windows:</b> Open the web app or double-click <b>START_WINDOWS.bat</b> to create a Desktop shortcut.';
+        } else {
+            deviceBadge.innerHTML = '⚡ <b>Ready:</b> All Devices Supported';
+        }
+    </script>
+</body>
+</html>

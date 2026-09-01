@@ -1,0 +1,6 @@
+{
+  "name": "LeadScout AI",
+  "description": "AI-powered leads extraction, research, and data intelligence platform for insurance companies and registered schools with targeted location filters, custom field extractors, report exports (CSV, Excel, PDF), offline sync, usage limits dashboard, and an integrated AI report analyst chatbot.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
