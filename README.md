@@ -97,31 +97,30 @@
 </table>
 
 ---
-
-## 🧠 System Architecture
-
-```mermaid
+🧠 System Architecture
+code
+Mermaid
 flowchart TD
-    A[Target Input: State, City, Sector & Niche] --> B[LeadScout Scraper & Dorking Engine]
-    B --> C[Gemini AI Extraction & JSON Parsing]
-    C --> D[Deduplication & Sanitization Layer]
+    A["Target Input: State, City, Sector & Niche"] --> B["LeadScout Scraper & Dorking Engine"]
+    B --> C["Gemini AI Extraction & JSON Parsing"]
+    C --> D["Deduplication & Sanitization Layer"]
     
-    subgraph Analysis & Scoring Engine
-        D --> E[Decision Tree Engine: Authority + Budget + Urgency]
-        E --> F[Power Score %: 68% - 99%]
-        D --> G[Ground-Reality Sentiment & Review Mining]
-        D --> H[Real-Time Website & Conversion Audit]
+    subgraph ANALYSIS["Analysis & Scoring Engine"]
+        D --> E["Decision Tree Engine: Authority + Budget + Urgency"]
+        E --> F["Power Score %: 68% - 99%"]
+        D --> G["Ground-Reality Sentiment & Review Mining"]
+        D --> H["Real-Time Website & Conversion Audit"]
     end
     
-    H --> I[4-Bullet Sales Pitch Generator]
+    H --> I["4-Bullet Sales Pitch Generator"]
     
-    subgraph UI & Distribution Hub
-        F --> J[Sleek Streamlit Dashboard / Popover System]
+    subgraph DISTRIBUTION["UI & Distribution Hub"]
+        F --> J["Sleek Streamlit Dashboard / Popover System"]
         G --> J
         I --> J
-        J --> K[1-Click WhatsApp Direct Action]
-        J --> L[Excel / CSV CRM Export]
-        J --> M[Android Native Companion APK]
+        J --> K["1-Click WhatsApp Direct Action"]
+        J --> L["Excel / CSV CRM Export"]
+        J --> M["Android Native Companion APK"]
     end
 💻 Technology Stack
 Domain	Technologies
@@ -167,7 +166,7 @@ Open in Chrome and select "Add to Home screen" / "Install app" for an instant ap
 Companion standalone APK bundle is provided in the repository release files.
 📂 Project Structure
 code
-Code
+Text
 ├── app.py                  # Streamlit primary entry point for VS Code execution
 ├── streamlit_app.py        # Lead intelligence dashboard, scoring engine & UI
 ├── requirements.txt        # Pre-configured dependency manifest
@@ -179,4 +178,3 @@ Code
 Built with precision for modern B2B sales teams and digital marketing agencies.
 ⭐ If you find this project useful, give it a star on GitHub! ⭐
 </div>
-```
