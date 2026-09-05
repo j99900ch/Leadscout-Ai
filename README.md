@@ -122,6 +122,7 @@ flowchart TD
         J --> L["Excel / CSV CRM Export"]
         J --> M["Android Native Companion APK"]
     end
+
 💻 Technology Stack
 Domain	Technologies
 Frontend Framework	Streamlit, Jetpack Compose (Material 3 for Android companion)
@@ -130,6 +131,7 @@ Generative AI & LLM	Google Gemini API (gemini-2.5-flash, gemini-3.5-flash)
 Data Engine & Audit	Pandas, OpenPyXL, BeautifulSoup4, Requests, Regex
 Intelligence Engine	Multi-factor Heuristic Decision Logic & Sentiment Categorizer
 Export Formats	Styled .xlsx, .csv, .json
+
 ⚡ Quick Start (VS Code / Terminal)
 Run LeadScout AI locally in just two commands:
 1. Clone the repository & enter the directory:
@@ -151,19 +153,26 @@ code
 Bash
 streamlit run app.py
 Note: You can also run streamlit run streamlit_app.py. The application automatically binds to http://localhost:8501 and broadcasts to local network devices (tablets and mobile phones).
+
 🔑 Environment Configuration
 Create a .env file in the root directory (or use the built-in Settings sidebar):
 code
 Env
 GEMINI_API_KEY=your_gemini_api_key_here
 Get a free API key with generous tier limits from Google AI Studio.
+
 📱 Cross-Platform Support
 LeadScout AI is built for hybrid desktop and mobile workflows:
+
 💻 Windows PC: Includes a 1-click launcher (START_WINDOWS.bat) that creates a desktop shortcut automatically.
+
 🍏 macOS: Includes START_MAC.command configured to resolve Gatekeeper quarantine flags (xattr -cr) and launch native app bundles.
+
 📱 Android Mobile (PWA & Native APK):
 Open in Chrome and select "Add to Home screen" / "Install app" for an instant app icon.
 Companion standalone APK bundle is provided in the repository release files.
+
+
 📂 Project Structure
 code
 Text
